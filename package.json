@@ -9,6 +9,7 @@
     "start": "nodemon server/index.js",
     "dev": "node server/index.js",
     "test": "jest --watch",
+    "react-dev" : "webpack --watch --config webpack.prod.js",
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "react-hot-loader": "^4.3.6",
     "react-motion": "^0.5.2",
     "reactstrap": "^6.4.0",
+    "redis": "^2.8.0",
     "request": "^2.88.0",
     "sequelize": "^4.39.0",
     "svg-inline-react": "^3.1.0",
