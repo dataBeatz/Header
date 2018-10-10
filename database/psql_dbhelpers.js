@@ -7,7 +7,7 @@ const client = redis.createClient(REDIS_PORT);
 const getData = (req, res) => {
   let id = req.params.artistID; 
   getArtistData(id, (data) => {
-    client.setex(id, 3600, JSON.stringify(reshape(data.rows)));
+    client.setex(id, 36000, JSON.stringify(reshape(data.rows)));
 
    res.status(200).send(reshape(data.rows));
   });
