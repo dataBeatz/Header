@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS artists (
 
 
 CREATE TABLE IF NOT EXISTS locations (
-  id INT SERIAL PRIMARY KEY,
   locationID INT NOT NULL REFERENCES artists(artistID),
   Locations TEXT NOT NULL,
   followersNumber INT NOT NULL
