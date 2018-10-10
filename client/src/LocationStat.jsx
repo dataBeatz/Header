@@ -9,7 +9,7 @@ class LocationStat extends Component {
     super(props);
   }
   render() {
-    // console.log('COMPONENT: LOCATION STAT:', this.props);
+    console.log('COMPONENT: LOCATION STAT:', this.props.stats);
     const locationData = Object.entries(this.props.stats);
     locationData.sort((a, b) => b[1] - a[1]);
     const entryToRender = (location, followerCount) => (

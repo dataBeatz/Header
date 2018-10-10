@@ -4,12 +4,15 @@ import { hot } from 'react-hot-loader';
 import axios from 'axios';
 import Header from './Header.jsx';
 
+
+
 const getArtistInfo = callback => {
   axios
     .get(`/artists/${Math.floor(Math.random() * 99 + 1)}`)
     .then(response => {
-      // console.log(response.data);
-      callback(response.data[0]);
+      console.log('response',response);
+      //console.log(response.data[0])
+      callback(response.data);
     })
     .catch(error => {
       // console.error(error);
@@ -44,7 +47,9 @@ class App extends Component {
   }
 
   render() {
+    console.log('in app render')
     const toRender = !!this.state.artistDisp ? <Header artist={this.state.artistDisp} handleFollowToggle={this.handleFollowToggle} /> : <div className="placeHolder" />;
+    console.log('artistDisp', this.state.artistDisp)
     return <React.Fragment>{toRender}</React.Fragment>;
   }
 }
