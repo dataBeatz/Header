@@ -1,17 +1,17 @@
 const { getArtistData, writeData } = require('../database/psql_index.js');
-const redis = require('redis');
 const reshape = require('./dataReshaper.js')
+const redis = require('redis');
 const REDIS_PORT = process.env.REDIS_PORT;
 const client = redis.createClient(REDIS_PORT);
 
 const getData = (req, res) => {
   let id = req.params.artistID; 
   getArtistData(id, (data) => {
+    res.status(200).send(reshape(data.rows));
     client.setex(id, 36000, JSON.stringify(reshape(data.rows)));
-
-   res.status(200).send(reshape(data.rows));
   });
 }
+
 const postData = (req, res) => {
   let artistData = {
     artistname : 'alice cooper',

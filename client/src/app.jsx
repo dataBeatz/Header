@@ -11,11 +11,9 @@ const getArtistInfo = callback => {
     .get(`/artists/${Math.floor(Math.random() * 99 + 1)}`)
     .then(response => {
       console.log('response',response);
-      //console.log(response.data[0])
       callback(response.data);
     })
     .catch(error => {
-      // console.error(error);
     });
 };
 const blackBG = { backgroundColor: '#191414' };
