@@ -13,17 +13,19 @@ const Header = ({ artist, handleFollowToggle }) => {
   // background styling has to be done in-line.
   const blackBG = {
     //linear-gradient(transparent, black),
-    background: `linear-gradient(transparent -30%, rgb(24,24,24)), url(${artist.artistImages[0]}) no-repeat top`,
+    background: `linear-gradient(transparent -30%, rgb(24,24,24)), url(${artist.images[0]}) no-repeat top`,
     backgroundSize: 'cover'
   };
 
   return (
+    
     <React.Fragment>
+      ${console.log(`in header`, artist)}
       <NavBar />
       <div style={blackBG} className={headerStyle.artistPortraitBG}>
         <div className={headerStyle.scrollSectionContainer}>
-          <span className={headerStyle.monthlyListeners}>{artist.followersNumber.toLocaleString('en')} Followers</span>
-          <h1 className={headerStyle.artistName}>{artist.artistName}</h1>
+          <span className={headerStyle.monthlyListeners}>{artist.followersnumber.toLocaleString('en')} Followers</span>
+          <h1 className={headerStyle.artistName}>{artist.artistname}</h1>
           <div className={headerStyle.buttonSection}>
             <PlayButton />
             <FollowButton artist={artist} handleFollowToggle={handleFollowToggle} />

@@ -23,7 +23,8 @@ class About extends Component {
     }));
   }
   render() {
-    // console.log('COMPONENT: ABOUT:', this.props);
+    console.log('COMPONENT: ABOUT:', this.props.artist.images);
+
 
     return (
       <div className="about-container">
@@ -31,7 +32,7 @@ class About extends Component {
           <div className="biography-container">
             <h2 className="biography-header">Bio</h2>
             <div className={`biography-txt-container ${this.state.collapseBio ? 'collapsed' : 'expanded'}`}>
-              {this.props.artist.about.Biography.split('\n').map(paragraph => (
+              {this.props.artist.bio.split('\n').map(paragraph => (
                 <React.Fragment>
                   <p className="biography-txt">{paragraph}</p>
                 </React.Fragment>
@@ -41,10 +42,10 @@ class About extends Component {
               {this.state.collapseBio ? 'EXPAND' : 'HIDE'}
             </button>
           </div>
-          <ArtistPics artistImages={this.props.artist.artistImages} />
+          <ArtistPics artistImages={this.props.artist.images} />
         </div>
         <div className="about-container-right">
-          <LocationStat stats={this.props.artist.about.Where} />
+          <LocationStat stats={this.props.artist.locations} />
         </div>
       </div>
     );

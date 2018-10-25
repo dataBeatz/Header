@@ -45,7 +45,7 @@ class EtcButton extends Component {
             <li className="dropdown-item">
               <a href="#" onClick={this.props.handleFollowToggle}>
                 {/* State-dependent text ... */}
-                {this.props.artist.followed ? 'Unfollow' : 'Follow'}
+                {this.props.followed ? 'Unfollow' : 'Follow'}
               </a>
             </li>
             <li className="dropdown-item">
