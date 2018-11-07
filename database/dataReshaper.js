@@ -1,19 +1,15 @@
-let reshape = function(arr) {
-  var obj = {};
+const reshape = function (arr) {
+  const obj = {};
   for (let i of arr) {
-    if(i.locations === undefined || null){
-      delete arr[i.locations]
+    if (i.locations === undefined || null) {
+      delete arr[i.locations];
     } else {
-    obj[i.locations] = i.followersnumber;
+      obj[i.locations] = i.followersnumber;
     }
   }
-  let output = arr[0];
+  const output = arr[0];
   output.locations = obj;
   return output;
-
 };
-
-
-
 
 module.exports = reshape;
